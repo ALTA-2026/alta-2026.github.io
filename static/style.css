@@ -1,0 +1,1008 @@
+html {
+    scroll-behavior: smooth;
+    min-width: 300px;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+h1,h2,h3,h4,h5 {
+    margin: 0px;
+    padding:0px;
+}
+
+.albert-sans{font-family: "Albert Sans", sans-serif;}
+
+p, i {
+	font-family: "Albert Sans", sans-serif;
+}
+
+h2 {
+    font-size: calc(3vh + 1.5vw);
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 10px;
+}
+
+h3 {
+    font-size: calc(1vh + 0.5vw);
+    font-family: "Albert Sans", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    padding: 0px 10px 10px 10px;
+}
+
+.p1 {
+    font-size: calc(1.5vw + 15px);
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.p2 {
+    font-size: calc(.7vw + 13px);
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.gradient-background {
+    background: linear-gradient(0deg, #1aa44b, #47c473, #9bcd73, #f6eb14);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.flex{display:flex;}
+.flex-col{flex-direction:column;}
+.flex-row{flex-direction:row;}
+.justify-center{justify-content:center;}
+
+.align-center{align-items: center;}
+.items-top{align-items:flex-start;}
+
+.wrap{
+    flex-wrap:wrap;
+}
+
+.g{gap:calc(4vw)}
+
+.p-3{ padding:2.5rem;}
+.p-2{padding:1.75rem;}
+.p-1{padding:1rem;}
+
+.m-1{margin:1rem;}
+.m-2{margin:1.75rem;}
+.m-3{margin:2.5rem;}
+
+.fixed{position:fixed;}
+.right-0{right:0px;}
+.top-0{top:0px;}
+.left-0{left:0px;}
+
+.margin-bottom{margin-bottom:1rem;}
+.margin-top{margin-top:1rem;}
+
+
+.no-select {
+    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.no-link-decor { 
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent element */}
+
+
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+/* .text-tile{
+    box-shadow: 1px 1px 2px #875681; padding: 5px; border-radius: 8px;
+    background: white;
+} */
+
+/* .text-tile-hover:hover{
+    box-shadow: 3px 3px 5px #875681; padding: 5px; border-radius: 8px;
+    background: white;
+    transition: 0.3s;
+} */
+
+
+
+/* ----- MOBILE -------- */
+
+@media screen and (max-width: 420px){
+    .flex-row {
+        flex-direction: column;
+    }
+}
+
+
+/* --------- PAGE STYLES ----------- */
+
+#backgroundColor {
+    width: 100vw;
+    height: 100vh;
+    position: fixed; /* Stays fixed even when scrolling */
+    top: 0;
+    left: 0;
+    background-color: #ace578; 
+    z-index: -1; 
+}
+
+.page {
+    height: 100vh;
+    opacity: 0%;
+    position: relative;
+    /* border: black solid 1px; */
+    padding-top: 1px;
+}
+
+.page.inView, .slide.inView {
+    animation: fadeIn 1s ease 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.outOfView {
+    animation: fadeOut 1s ease 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.page-ctn {
+    height:95vh;
+    margin-top: 10vh;
+    width: 66vw;
+    margin-left: 17vw;
+}
+
+
+/* ------- NAV BAR ----------- */
+nav {
+    position: fixed;
+    text-align: right;
+}
+
+.pageName {
+    /* with padding, the total width is 15vh */
+    width: 7vw;
+    color: black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 1vw;
+    display: block;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.25vw;
+    text-decoration: none;
+    border-right: 2px solid black;
+}
+
+.pageName.hover {
+    transition: 0.5s;
+    color: #f6eb14;
+}
+
+.pageName.inView {
+    color: white;
+    border-right: 2px solid white;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 2.25rem;
+    right: 2.25rem;
+    z-index: 5;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.95);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mobile-menu-toggle span {
+    font-size: 1.75rem;
+    color: #ffffff;
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 6;
+    background: rgba(255, 255, 255, 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 2.5rem 12vw;
+}
+
+.mobile-nav-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-nav-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.mobile-menu-close span {
+    font-size: 2rem;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mobile-nav-link {
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 5vw, 2.5rem);
+    color: black;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.mobile-nav-link:hover {
+    color: #f6eb14;
+}
+
+#mobileSocialContainer{
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.mobile-social{
+    height: 6vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    #nav {
+        display: none !important;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-nav-overlay {
+        padding: 2.5rem 8vw;
+    }
+}
+
+/* TOP LEFT LOGO */
+#topLogoContainer {
+    position: fixed;
+    height: 10vw;
+    width: 10vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#topLogo {
+    height: 60%;
+    width: 60%;
+    /* alta logo links to alta website */
+}
+
+/* ------------  HOME --------------- */
+#homePageGradient {
+    background: linear-gradient(180deg, #47c473, #9bcd73, #f6eb14);
+    width: 100vw;
+    height: 100vh;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: -1; 
+}
+
+#mainTitle {
+    text-align: center;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 10vw;
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+#subtitle {
+    text-align: center;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5vw;
+    width: 60vw;
+}
+
+.simpleLine {
+    width: 30%;
+    border-top: 2px solid #f6eb14;
+    margin: 2vh auto;
+    margin-bottom: 4vh;
+}
+
+#bottomHomePage {
+    bottom: 5vh;
+    right: 2.5vw;
+    position: absolute;
+}
+
+/* DATE AND TIME */
+#datetime {
+    display: inline-block;
+    padding: 1vw 2vw 1vw 2vw;
+    text-align: right;
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: calc(1vw + 7px);
+}
+
+/* SOCIAL MEDIA STUFF 
+#socialContainer {
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap:2rem;
+}
+
+.social {
+    height: 5.5vh;
+    width: 5.5vh;
+    object-fit: fill;
+    background-color: black;
+}
+
+#linkedin {
+    mask: url(assets/socialMedia/linkedin.png);
+    mask-size: 100%;
+    mask-size: 100%;
+}
+
+#slack {
+    mask: url(assets/socialMedia/slack.png);
+    mask-size: 100%;
+}
+
+#instagram {
+    mask: url(assets/socialMedia/insta.png);
+    mask-size: 100%;
+} */
+
+/* REGISTER BUTTON */
+.registerContainer {
+    height: 10vw;
+    display: flex;
+    align-items: right;
+    position: fixed;
+    z-index: 2;
+    top: 1vw;
+    right: 2.5vw;
+}
+
+.register {
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 500;
+    font-size: calc(0.9vw + 0.9vh) !important;
+    text-decoration: none;
+    text-align: right;
+    color: black;
+    padding: 1vw 2vw 1vw 2vw;
+    border-radius: 10px;
+    margin-left: 1vw;
+    transition: all 0.5s ease-in-out;
+}
+
+.register:hover {
+    font-size: calc(1.1vw + 1.1vh) !important;
+    color: #f6eb14;
+}
+
+/* -------- ABOUT US ------------- */
+#conferenceImage {
+    width: 40vw;
+    z-index: 1;
+    margin-bottom: 2vh;
+}
+
+.gradient-shadow-1 {
+    box-shadow: 20px 8px 1px #875681;
+    border-radius: 20px;
+}
+
+.gradient-shadow-2 {
+    box-shadow: 20px 12px 1px #875681;
+    border-radius: 20px;
+}
+
+#textBox {
+    height: 75vh;
+    width: 80vw;
+    /* margin-top: 10vh;
+    padding-left: 1vw;
+    padding-right: 1vw; */
+    padding-bottom: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* ------ HISTORY ------ 
+
+#pastSpeakersTitle {
+        height: 25%;
+    font-size: 2.6vh;
+    font-weight: 600;
+    margin-bottom: 2vw;
+    text-align: left;
+}
+
+#historyContainer {
+    padding: 20px;
+    color: black;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#pastSpeakersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden; /* clip edges so fades look clean 
+} 
+
+.pastSpeakerName{
+    font-size: 2vh;
+    padding: 10px 10px 0px 10px;
+}
+
+.scrolling-track {
+    display: flex;
+    animation: scroll-left 45s linear infinite;
+    will-change: transform;
+    height: 25vw;
+    min-height: 8rem;
+} */
+
+/* Base state: hidden until 'in-view' is added by the observer */
+.past-speaker-container {
+    flex: 0 0 auto;
+    width: 12vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 400ms ease, transform 400ms ease;
+    text-wrap: auto;
+    
+}
+
+/* Visible state (added when intersectionRatio >= ENTER_RATIO) */
+.past-speaker-container.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Soft dim only when ALSO in-view (pre-exit) */
+.past-speaker-container.in-view.near-edge {
+    opacity: 0.65;   /* subtle dim near edges */
+    transform: scale(0.96);
+}
+.past-speaker-container:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+
+.past-speaker-img {
+    width: 10vw;
+    min-width: 80px;
+    max-width: 120px;
+    aspect-ratio: 1/1;
+    min-height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    user-select: none;
+}
+
+@keyframes scroll-left {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+/* --------- SPEAKERS --------- */
+#speakerSlidesContainer {
+    width: 80%;
+    height: 75vh;
+}
+
+.slide {
+    width: 100%;
+    height: 90%;
+    color: black;
+}
+
+#buttons {
+    width: 100%;
+    height: 10%;
+    color: black;
+    transition: 0.5s;
+}
+
+.bioContainer {
+    flex:1;
+    padding: 0% 5% 0% 5%;
+}
+
+.imgContainer {
+    height: 100%;
+    flex:1;
+}
+
+.speaker-img{
+    max-width: 450px;
+    min-width: 200px;
+    aspect-ratio: 1/1;
+    width: 30vw;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.speaker-img-mobile{
+    max-width: 300px;
+    aspect-ratio: 1/1;
+    width: 35vw;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* --------- VENUE --------- */
+#mapContainer {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 20px 12px 1px #875681;
+}
+
+@media screen and (max-width: 900px) {
+    #mapContainer {
+        display: none;
+    }
+}
+
+/* --------- SLACK --------- */
+#slackContainer {
+    width: calc(68vw - 40px);
+    height: 75vh;
+}
+
+#slackWordsContainer {
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    padding-top: 30%;
+    padding-bottom: 20%;
+}
+
+/* ----------- TEAM --------- */
+
+.profile-img{
+    aspect-ratio: 1/1;
+    width:calc(10vh + 8vw);
+    object-fit:cover;
+    border-radius:15px;
+}
+
+
+.team-m {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+.team-m p {
+	text-align: center;
+}
+
+.s-logo {
+    height: 6.5vw;
+    min-height: 50px;
+    object-fit: contain;
+}
+
+.l-logo {
+    object-fit: cover;
+    height: 10vh;
+}
+
+/* --------PARTNERS-------- */
+
+#affiliates-preview{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap:2vw;
+
+}
+
+/* --------CONTACT-------- */
+
+/* CONTACT BOX */
+#registrationBox {
+    width: 80vw;
+    max-width: 900px;
+    height: 75vh;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.h1 {
+    font-size: calc(1.25vh + 1vw);
+    font-family: "DM Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.h2 {   
+    font-size: calc(0.75vh + 0.5vw);
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* FORM */
+
+.field-error {
+    color: red;
+    font-size: calc(0.5vh + 0.5vw);
+    margin-top: -0.5vh;
+    margin-bottom: 0.5vh;
+    display:block;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+#message {
+    font-size: calc(0.75vh + 0.75vw);
+}
+
+#message.submitted {
+    color: white;
+    font-size: calc(1.5vh + 1.5vw);
+    font-family: DM Mono;
+    margin-top: 10vh;
+
+    background-color: white;
+    width: 50%;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+
+    border-radius: 20px;
+}
+
+#formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.mono {
+    font-family: "DM Mono", monospace;
+}
+
+.input {
+    font-family: "DM Mono", monospace;
+    box-sizing: border-box;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-bottom: 1vw;
+    height: 6vh;
+    width: calc(100% - 4vw);
+    padding: 0.5vh 1.25vw 0.5vh 1.25vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: calc(1vh + 1vw);
+    display: block;
+    background: white;
+}
+
+.submitButton {
+    font-family: DM Mono;
+    font-weight: normal;
+    color: white;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    border: 0px solid black;
+    border-radius: 20px;
+    font-size: calc(0.8vw + 0.8vh);
+}
+
+.submitButton:hover {
+    font-size: calc(1vw + 1vh);
+    transition: 0.5s;
+}
+
+#msgBox{
+    height: 18vh;
+    padding-top: 1.5vh;
+}
+
+/* FOOTER */
+footer {
+    height: calc(2.5vh - 4px);
+    padding: 2px;
+    text-align: center;
+
+    font-family: "Albert Sans", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 8px;
+}
+
+/* ----- MOBILE -------- */
+
+@media screen and (max-width: 420px){
+    .flex-row {
+        flex-direction: column;
+    }
+}
+
+.mobile-center {
+    text-align: center;
+}
+
+/* ---- SCHEDULE PAGE ---- */
+
+#scheduleTimeline {
+    width: 100%;
+}
+
+#scheduleTimeline::-webkit-scrollbar {
+    width: 3px;
+}
+
+#scheduleTimeline::-webkit-scrollbar-track {
+    background: rgba(135, 86, 129, 0.08);
+    border-radius: 4px;
+}
+
+#scheduleTimeline::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #EC5E78, #875681);
+    border-radius: 4px;
+}
+
+.sched-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2vw;
+    padding: 1.1vh 0.5rem;
+    border-bottom: 1px solid rgba(135, 86, 129, 0.12);
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.sched-row:hover {
+    background: rgba(135, 86, 129, 0.04);
+}
+
+.sched-row:last-child {
+    border-bottom: none;
+}
+
+.sched-time {
+    font-family: "DM Mono", monospace;
+    font-size: calc(0.3vw + 9px);
+    font-weight: 400;
+    color: #875681;
+    min-width: 8.5rem;
+    text-align: right;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sched-pip {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.sched-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sched-event-title {
+    font-family: "DM Mono", monospace;
+    font-size: calc(0.35vw + 10px);
+    font-weight: 500;
+    color: #1a1a2e;
+    line-height: 1.3;
+}
+
+.sched-org {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: calc(0.25vw + 8.5px);
+    font-weight: 400;
+    color: #875681;
+}
+
+.sched-subtitle {
+    font-family: "IBM Plex Serif", serif;
+    font-size: calc(0.25vw + 8.5px);
+    font-weight: 300;
+    font-style: italic;
+    color: #555;
+}
+
+.sched-gradient-text {
+    background: linear-gradient(45deg, #EC5E78, #CE297E, #AB4080, #875681, #3378BD, #4C8FC7);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sched-break .sched-event-title {
+    font-weight: 300;
+    color: #999;
+}
+
+.sched-break .sched-time {
+    color: #bbb;
+}
+
+.sched-break .sched-pip {
+    opacity: 0.35;
+}
+
+.sched-parallel-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.sched-track {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sched-or {
+    font-size: calc(0.3vw + 8px);
+    font-weight: 500;
+    color: #EC5E78;
+    padding: 0 0.25rem;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 900px) {
+   
+
+    .sched-time {
+        min-width: 5rem;
+        font-size: 0.6rem;
+    }
+
+    .sched-row {
+        gap: 0.75rem;
+    }
+
+    .sched-parallel-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+
+}

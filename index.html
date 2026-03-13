@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>African Language Teachers Association Conference</title>
+
+	<meta name="description" content="Welcome to the ALTA Conference">
+
+    <meta property="og:url" content="https://alta___.com"> <!-- edit here -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ALTA Conference">
+    <meta property="og:description" content="Welcome to the ALTA Conference">
+    <meta property="og:image" content="[logo here]"> <!-- edit here -->
+    <!-- <meta name="twitter:card" content="summary_large_image"> -->
+
+    <link rel="icon" type="image/png" href="static/favicon.png"/>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- BACKGROUND COLOR -->
+    <div id="backgroundColor"></div>
+
+    <!-- TOP LEFT LOGO -->
+    <a href="https://altaglobalweb.org/" id="topLogoContainer">
+        <img src="static/assets/ALTA_Logo.png" alt="ALTA Logo" id="topLogo">
+    </a>
+
+    <!-- NAV BAR -->
+    <div class="flexbox" style="position: fixed; width: 10vw; height: calc(100vh - 20vw); margin-top: 10vw;" id="nav">
+        <nav id="nav">
+            <a class="pageName" href="#home" id="page1Link" onmouseenter="hover('page1Link')" onmouseleave="hover('page1Link')">Home</a>
+            <a class="pageName" href="#about" id="page2Link" onmouseenter="hover('page2Link')" onmouseleave="hover('page2Link')">About</a>
+            <a class="pageName" href="#speakers" id="page3Link" onmouseenter="hover('page3Link')" onmouseleave="hover('page3Link')">Speakers</a>
+            <a class="pageName" href="#hotel" id="page4Link" onmouseenter="hover('page4Link')" onmouseleave="hover('page4Link')">Hotel</a>
+            <a class="pageName" href="#travel" id="page5Link" onmouseenter="hover('page5Link')" onmouseleave="hover('page4Link')">Travel</a>
+            <a class="pageName" href="#faq" id="page6Link" onmouseenter="hover('page6Link')" onmouseleave="hover('page6Link')">FAQ</a>
+            <a class="pageName" href="#contact" id="page7Link" onmouseenter="hover('page7Link')" onmouseleave="hover('page7Link')">Contact</a>
+
+            <script>
+                function hover(id) {
+                    var el = document.getElementById(id);
+                    if (el.classList.contains('hover')) {
+                        el.classList.remove('hover');
+                        el.style.fontSize = 'calc('+el.style.fontSize+' - 2.5px)';
+                    }
+                    else {
+                        el.classList.add('hover');
+                        el.style.fontSize = 'calc('+el.style.fontSize+' + 2.5px)';
+                    }
+                }
+            </script>
+        </nav>
+    </div>
+
+    <!-- MOBILE NAV -->
+    <button class="mobile-menu-toggle gradient-background" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="mobile-nav-inner">
+            <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Close navigation menu">
+                <span class="material-symbols-outlined" aria-hidden="true">close</span>
+            </button>
+            <nav class="mobile-nav-links">
+                <a class="mobile-nav-link" href="#home">Home</a>
+                <a class="mobile-nav-link" href="#about">About</a>
+                <a class="mobile-nav-link" href="#speakers">Speakers</a>
+                <a class="mobile-nav-link" href="#schedule">Schedule</a>
+                <a class="mobile-nav-link" href="#contact">Contact</a>
+                <a class="mobile-nav-link" href="#faq">FAQ</a>
+                <a class="mobile-nav-link" href="#hotel">Hotel</a>
+                <a class="mobile-nav-link" href="#travel">Travel</a>
+            </nav>
+        
+        </div>
+    </div>
+
+    <!-- REGISTER BUTTON -->
+    <div class="registerContainer">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdihW3KetqfBd6XK8LsbbDZNOVUh_nzScgrxLfV7cTwjLRmIw/viewform?usp=publish-editor" class="register">Register</a>
+    </div>
+    
+    <!-- HOME PAGE -->
+    <header class="page" id="home">
+        <div id="homePageGradient"></div>
+        <div class="flexbox" style="margin-left: 10vw; margin-top: 15vh; width: 80vw; height: calc(100vh - 20vw);">
+            <div>
+                <div id="mainTitle">ALTA 2026</div>
+                <div class="simpleLine"></div>
+                <div id="subtitle">We are the leading annual conference in African languages, literature, and cultural studies. 
+                    Come join other African language stakeholders in this annual event.</div>
+            </div>
+        </div>
+
+        <div id="bottomHomePage">
+            <div id="datetime">
+                April 9-11, 2026 <br/>
+                Princeton, NJ
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- ABOUT US PAGE -->
+    <section class="page" id="about">
+
+        <div class="flexbox page-ctn">
+            <div id="textBox">
+                <h2 style="text-align: left; width: 65vw;">The conference on teaching and learning African languages<br/></h2>
+                <div class="p2" style="text-align: right; width: 70vw; float: right;">The ALTA Annual Conference is where the leaders and stakeholders<br> 
+                    of African languages come together to explore groundbreaking approaches<br> in language pedagogy, cultural integration, and community engagement.</div>
+                <div class="p1" style="text-align: right; width: 70vw;">Conference Theme: <b><i>African Languages<br> Across Disciplines, Professions, and<br> Communities</i></b></div>
+                
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPEAKERS PAGE -->
+     <section class="page" id="speakers">
+        <div class="flexbox" style="width: 100%; height: 100%;">
+            <div id="speakerSlidesContainer" class="flexbox flex-col" style="justify-content: space-between;">
+                <!-- Speaker Slides -->
+                {% for i in range(length_active_speakers) %}
+                    {% if i%2 == 0 %}
+                        <div class="slide flex" id="slide{{i}}">
+                            <div class="bioContainer flexbox" style="float: left">
+                                <div>
+                                    <div class="team-m no-select">
+                                    <img class="speaker-img-mobile " src="{{url_for('static', filename=speakers.active[i].img)}}">
+                                </div>
+                                    <h2>{{speakers.active[i].name}}</h2>
+                                    <h3>{{speakers.active[i].organization}}</h3>
+                                    <div class="h2" style="padding-left: 10px;">
+                                        <p >{{speakers.active[i].bio}}</p>
+                                        <a class="no-link-decor text-tile text-tile-hover" target="_blank" href="{{speakers.active[i].link}}">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="imgContainer flexbox" style="float: right">
+                                <div class="team-m no-select">
+                                    <img class="speaker-img" src="{{url_for('static', filename=speakers.active[i].img)}}">
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="slide" id="slide{{i}}">
+                            <div class="imgContainer flexbox" style="float: left">
+                                <div class="team-m no-select">
+                                    <img class="speaker-img" src="{{url_for('static', filename=speakers.active[i].img)}}">
+                                </div>
+                            </div>
+
+                            <div class="bioContainer flexbox flex-col" style="float: right;">
+                                   
+                                    <div class="team-m no-select">
+                                    <img class="speaker-img-mobile " src="{{url_for('static', filename=speakers.active[i].img)}}">
+                                </div>
+                                <div>
+                                    <h2>{{speakers.active[i].name}}</h2>
+                                    <h3>{{speakers.active[i].organization}}</h3>
+                                    <div class="h2" style="padding-left: 10px;">
+                                        <p>{{speakers.active[i].bio}}</p>
+                                        <a class="no-link-decor text-tile text-tile-hover" target="_blank" href="{{speakers.active[i].link}}">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+                <!-- Slide Buttons -->
+                <div class="buttons">
+                    <div class="flexbox" style="cursor: pointer;">
+                        <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);;" onclick="prevSlide(); delay()">arrow_back</div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% for i in range(length_active_speakers) %}
+                            <div class="material-symbols-outlined page_controllers" style="font-size: calc(1vh + 0.5vw);" onclick="showSlide({{i}}); delay()">radio_button_unchecked</div>&nbsp;&nbsp;&nbsp;&nbsp;
+                        {% endfor %}
+                        <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);" onclick="nextSlide(); delay()">arrow_forward</div>
+                    </div>
+                </div>
+
+                <!-- Slide Script -->
+                 <script>
+                    var speakers = document.querySelectorAll(".slide");
+                    var pageControllers = document.querySelectorAll(".page_controllers");
+                    var slideNum = 0;
+                    var time = 0;
+
+                    function showSlide(j) {
+                        slideNum = (j+speakers.length)%speakers.length;
+                        for (var i = 0; i < speakers.length; i++) {
+                            speakers[i].style.display = "none";
+                            pageControllers[i].innerHTML = "radio_button_unchecked";
+                            speakers[i].classList.remove('inView');
+                        }
+                        speakers[slideNum].style.display = "flex";
+                        speakers[slideNum].classList.add('inView');
+                        pageControllers[slideNum].innerHTML = "radio_button_checked";
+                    }
+
+                    function nextSlide(){
+                        slideNum++;
+                        showSlide(slideNum);
+                    }
+
+                    function prevSlide(){
+                        slideNum--;
+                        showSlide(slideNum);
+                    }
+
+                    showSlide(0);
+
+                    function sleep(ms) {
+                        return new Promise(resolve => setTimeout(resolve, ms));
+                    }
+
+                    function delay() {
+                        time = -450;
+                    }
+
+                    // Move Slides
+                    function moveAuto() {
+                      time++;
+                        if (time >= 450) {
+                            nextSlide();
+                            time = 0;
+                        }
+                        requestAnimationFrame(moveAuto);
+                    }
+
+                    requestAnimationFrame(moveAuto);
+                 </script>
+            </div>
+        </div>
+     </section>
+
+    <!-- HOTEL PAGE -->
+    <section class="page" id="hotel">
+        <div class="page-ctn flexbox flex-col align-center justify-center"> 
+            <h2 class="m-1 g text-left">Hotels</h2>
+            <p class="p2 text-center" style="margin-bottom:3rem;">Info</p>
+            <div class="flex flex-col">
+                <div class="flex flex-row align-center g">
+                    <a class="text-center" href="https://citp.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/citp_logo.jpeg">
+                    </a>
+                    <a class="text-center" href="https://cdh.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/cdh_logo.jpg"></a>
+                    <a class="text-center" href="https://researchcomputing.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/princeton_research_computing_logo.jpeg"></a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAVEL PAGE -->
+    <section class="page" id="travel">
+        <div class="page-ctn flexbox flex-col align-center justify-center"> 
+            <h2 class="m-1 g text-left">Travel & Visas</h2>
+            <p class="p2 text-center" style="margin-bottom:3rem;">Info</p>
+            <div class="flex flex-col">
+                <div class="flex flex-row align-center g">
+                    <a class="text-center" href="https://citp.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/citp_logo.jpeg">
+                    </a>
+                    <a class="text-center" href="https://cdh.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/cdh_logo.jpg"></a>
+                    <a class="text-center" href="https://researchcomputing.princeton.edu/" target="_blank"><img class="l-logo" src="static/assets/princeton_research_computing_logo.jpeg"></a>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ PAGE -->
+    <section class="page" id="faq">
+        <div class="page-ctn flexbox flex-col align-center justify-center"> 
+            <h2 class="m-1 g text-left">FAQ</h2>
+            <p class="p2 text-center" style="margin-bottom:3rem;">Info</p>
+            <div class="flex flex-col">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+     
+    <section class="page" id="contact">
+        <div class="flexbox page-ctn">
+            <h2>Contact Us</h2>
+            <div id="messageContainer" class="message" style="height: 10%;">
+                <div id="message" class="p2">
+                    Email us at altaglobalconference2026@gmail.com.
+                    <br/>
+                    We'll reply back as soon as possible.
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+
+    <script>
+        let elementsArray = document.querySelectorAll(".page");
+        let linksArray = document.querySelectorAll(".pageName");
+        var benchmarks = [];
+        for (var i = 0 ; i < elementsArray.length - 1; i++) {
+            benchmarks[i] = i+0.5;
+        }
+
+        var onFirstPage = true;
+        window.addEventListener('scroll', fadeIn); 
+        function fadeIn() {
+            var top = elementsArray[0].getBoundingClientRect().top;
+            var height = elementsArray[0].getBoundingClientRect().height;
+            var pos = -top/height;
+            var domain = getDomain(pos);
+            for (var i = 0; i < elementsArray.length; i++) {
+                var elem = elementsArray[i];
+                var link = linksArray[i];
+
+                if (i==domain) {
+                    elem.classList.add("inView");
+                    elem.classList.remove("outOfView");
+                    link.classList.add("inView");
+                    if (i==0) {
+                        onFirstPage = true;
+                    }
+                } 
+                else {
+                    elem.classList.remove("inView");
+                    elem.classList.add("outOfView");
+                    link.classList.remove("inView");
+                    if (i==0) {
+                        onFirstPage = false;
+                    }   
+                }
+
+                elem.style.zIndex = '0';
+                document.getElementById('nav').style.zIndex = '1';
+                document.getElementById('topLogoContainer').style.zIndex = '2';
+            }
+        }
+        fadeIn();
+
+        function getDomain(pos) {
+            // determines which page is in view
+            var domain = 0;
+            for (var i = 0 ; i < benchmarks.length; i++) {
+                if (pos > benchmarks[i]) {
+                    domain = i+1;
+                }
+            }
+
+            return domain;
+        }
+
+        window.addEventListener('scroll', changeLogo);
+        function changeLogo() {
+            if (onFirstPage) {
+                shrinkLogo();
+            }
+            else {
+                expandLogo();
+            }
+        }
+        changeLogo();
+
+        function shrinkLogo() {
+            var topLogo = document.getElementById('topLogo');
+            topLogo.style.height = '65%';
+            topLogo.style.width = '65%';
+        }
+
+        function expandLogo(size = 85) {
+            var topLogo = document.getElementById('topLogo');
+            topLogo.style.height = String(size)+'%';
+            topLogo.style.width =  String(size)+'%';
+        }
+
+        window.addEventListener('resize', checkPhoneMode);
+        var onPhone = true;
+        function checkPhoneMode() {
+            var height = window.innerHeight;
+            var width = window.innerWidth;
+            if (height > width) {
+                onPhone = true;
+            }
+            else {
+                onPhone = false;
+            }
+            phoneMode();
+        }
+        checkPhoneMode();
+
+        window.addEventListener('scroll', phoneMode);
+        function phoneMode() {
+            if (onPhone) {
+                if (onFirstPage) {
+                    loseSide();
+                }
+                else{
+                    gainSide();
+                    expandSide();
+                }
+                for (var icon of document.querySelectorAll('.social')) {
+                    icon.style.height = '6vw';
+                    icon.style.width = '6vw';
+                    icon.style.marginLeft = '5vw';
+                }
+
+                registerFont('15px');
+                document.getElementById('datetime').style.transform = 'translateY(-12vh)';
+            }
+            else {
+                gainSide();
+                shrinkSide();
+                for (var icon of document.querySelectorAll('.social')) {
+                    icon.style.height = '4vh';
+                    icon.style.width = '4vh';
+                    icon.style.marginLeft = '5vh';
+                }
+
+                registerFont('17px');
+                document.getElementById('datetime').style.transform = 'translateY(0px)';
+            }
+        }
+
+        function loseSide() {
+            document.getElementById('nav').style.display = 'none';
+            document.getElementById('topLogoContainer').style.display = 'none';
+            document.getElementById('socialContainer').style.marginLeft = '0';
+        }
+
+        function gainSide() {
+            document.getElementById('nav').style.display = 'flex';
+            document.getElementById('topLogoContainer').style.display = 'flex';
+            document.getElementById('socialContainer').style.marginLeft = '8vw';
+        }
+
+        function expandSide() {
+            expandLogo(65);
+            for (var pageName of document.querySelectorAll('.pageName')) {
+                pageName.style.width = '18vw';
+                pageName.style.fontSize = '2.25vw';
+            }
+            document.getElementById('topLogoContainer').style.height = '15vw';
+            document.getElementById('topLogoContainer').style.width = '15vw';
+        }
+
+        function shrinkSide() {
+            changeLogo();
+            for (var pageName of document.querySelectorAll('.pageName')) {
+                pageName.style.width = '7vw';
+                pageName.style.fontSize = '1.25vw';
+                document.getElementById('topLogoContainer').style.height = '10vw';
+                document.getElementById('topLogoContainer').style.width = '10vw';
+            }
+        }
+
+        function registerFont(size) {
+            document.getElementById('register').style.fontSize = size;
+        }
+    </script>
+</body>
+</html>
+
+ <footer>
+    Designed by Eden Reinfurt. Based on code by Miguel Pinero-Jacome.
+</footer>
+    </section>
