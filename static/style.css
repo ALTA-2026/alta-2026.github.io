@@ -199,7 +199,7 @@ h3 {
 }
 
 .page-ctn {
-    height:95vh;
+    height: 80vh;
     margin-top: 10vh;
     width: 66vw;
     margin-left: 17vw;
@@ -360,8 +360,8 @@ nav {
 /* TOP LEFT LOGO */
 #topLogoContainer {
     position: fixed;
-    height: 10vw;
-    width: 10vw;
+    height: 9vw; 
+    width: 24vw; 
 
     display: flex;
     justify-content: center;
@@ -668,18 +668,36 @@ nav {
     }
 }
 
-/* --------- SLACK --------- */
-#slackContainer {
-    width: calc(68vw - 40px);
-    height: 75vh;
+/* --------- FAQ --------- */
+
+.faq-item {
+    width: 600px;
+    max-width: 90%;
+    margin-bottom: 1rem;
 }
 
-#slackWordsContainer {
-    height: 50%;
-    width: 50%;
-    text-align: center;
-    padding-top: 30%;
-    padding-bottom: 20%;
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    font-size: 1rem;
+    background: #f3f3f3;
+    border: none;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #e7e7e7;
+}
+
+.faq-answer {
+    display: none;
+    padding: 1rem;
+    background: #fafafa;
+}
+
+.faq-answer.active {
+    display: block;
 }
 
 /* ----------- TEAM --------- */
