@@ -10,7 +10,6 @@
     <meta property="og:title" content="ALTA Conference">
     <meta property="og:description" content="Welcome to the ALTA Conference">
     <meta property="og:image" content="[logo here]"> <!-- edit here -->
-    <!-- <meta name="twitter:card" content="summary_large_image"> -->
 
     <link rel="icon" type="image/png" href="static/favicon.png"/>
 
@@ -25,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
 </head>
 <body>
@@ -116,25 +116,95 @@
     <!-- ABOUT US PAGE -->
     <section class="page" id="about">
 
-        <div class="flexbox page-ctn">
+        <div class="page-ctn align-center justify-center">
             <div id="textBox">
-                <h2 style="text-align: left; width: 65vw;">The conference on teaching and learning African languages<br/></h2>
-                <div class="p2" style="text-align: right; width: 70vw; float: right;">The ALTA Annual Conference is where the leaders and stakeholders<br> 
-                    of African languages come together to explore groundbreaking approaches<br> in language pedagogy, cultural integration, and community engagement.</div>
-                <div class="p1" style="text-align: right; width: 70vw;">Conference Theme: <b><i>African Languages<br> Across Disciplines, Professions, and<br> Communities</i></b></div>
+                <h2 style="width: 65vw; text-align: center;">The conference on teaching and learning African languages<br/></h2>
+                <div class="p2" style="width: 65vw; text-align: center;">The ALTA Annual Conference is where the leaders and stakeholders
+                    of African languages come together to explore groundbreaking approaches in language pedagogy, cultural integration, and community engagement.</div>
+                <div class="p1" style="width: 65vw; text-align: center;">Conference Theme: <b><i>African Languages Across Disciplines, Professions, and Communities</i></b></div>
                 
-            </div>
             </div>
         </div>
     </section>
 
     <!-- SPEAKERS PAGE -->
+     <script>
+        const speakersData = [
+            {
+                name: "Caroline Asiimwe",
+                organization: "Executive Secretary, East African Kiswahili Commission",
+                bio: "Dr. Asiimwe Caroline is the Executive Secretary of the East African Kiswahili Commission (EAKC), the East African Community institution tasked with coordinating and promoting Kiswahili across the region. She holds a PhD and Master’s in Kiswahili from the University of Dar es Salaam and a Bachelor’s degree from Makerere University. Dr. Asiimwe has extensive experience in advancing Kiswahili at national, regional, Pan-African, and global levels, forging strategic partnerships with governments, academic institutions, and development partners. Her work emphasizes language development, intercultural communication, and the role of Kiswahili in regional integration and multilingual societies. Previously, she lectured in the department of African Languages at Makerere University. She has researched and published on language policy, multilingualism, cultural linguistics, computational linguistics and Kiswahili teaching materials among others. An experienced editor, translator, and interpreter, Dr. Asiimwe bridges scholarship and practice, strengthening Kiswahili’s contribution to education, governance, and regional cooperation.",
+                img: "static/assets/caroline-asiimwe.png",
+                link: "https://example.com"
+            },
+            {
+                name: "John M. Mugane",
+                organization: "Professor of the Practice of African Languages and Culture and Director of the African Language Program, Harvard University",
+                bio: "John M. Mugane is Professor of the Practice of African Languages and Cultures at Harvard University, where he teaches and develops programs in African linguistics and language pedagogy. A specialist in Bantu linguistics, language contact, and African language policy, his scholarship examines the historical, structural, and sociopolitical dimensions of African languages in both continental and global contexts. His work engages questions of decolonization, epistemic sovereignty, and the institutional futures of African language programs. <br>Professor Mugane is also the founder of Thiomi-Lugha NLP, an initiative focused on machine translation and AI-driven solutions for low-resource African languages. His current research explores the intersection of African language pedagogy, machine learning, and multilingual communication, with particular attention to how emerging technologies are reshaping language learning, labor structures, and institutional infrastructure. <br>A committed advocate for sustainable and collaborative models of African language teaching, Professor Mugane’s work bridges scholarship, pedagogy, and technological innovation, positioning African languages as central to the reconfiguration of global academic and intellectual life.",
+                img: "static/assets/john-mugane.jpg",
+                link: "https://example.com"
+            },
+            {
+                name: "Ebenezer Ayesu",
+                organization: "Heritage Christian University",
+                bio: "Prof. Ebenezer Ayesu is a Cultural Historian and the Dean of Students at Heritage Christian University, and the Ag. Dean, School of Humanities and Social Sciences, of the same university. He was formerly a Senior Research Fellow at the Institute of African Studies, University of Ghana, Legon. Moreover, he was a Senior Lecturer (Part-Time) at the Departments of History Education and Basic Education, Winneba. He holds a Ph.D. in History from Indiana University (IU), Bloomington, USA. He was a Fulbright Scholar (2006-2008) at the Indiana University, Bloomington, IN, USA.",
+                img: "static/assets/ebenezer-ayesu.jpg",
+                link: "https://example.com"
+            }
+        ];
+     </script>
+
      <section class="page" id="speakers">
         <div class="flexbox" style="width: 100%; height: 100%;">
             <div id="speakerSlidesContainer" class="flexbox flex-col" style="justify-content: space-between;">
+                <div id="slides-wrapper">
+                </div>
                 <!-- Speaker Slides -->
-                {% for i in range(length_active_speakers) %}
-                    {% if i%2 == 0 %}
+                <script>
+                    const wrapper = document.getElementById("slides-wrapper");
+
+                    speakersData.forEach((speaker, i) => {
+                        const isEven = i % 2 === 0;
+
+                        const slide = document.createElement("div");
+                        slide.className = "slide flex";
+                        slide.id = `slide${i}`;
+
+                        slide.innerHTML = `
+                            <div class="bioContainer flexbox">
+                                <div>
+                                    <h2>${speaker.name}</h2>
+                                    <h3>${speaker.organization}</h3>
+                                    <p style="padding: 10px;";>${speaker.bio}</p>
+                                </div>
+                            </div>
+                            <div class="imgContainer flexbox">
+                                <img class="speaker-img" src="${speaker.img}">
+                            </div>
+                        `;
+
+                        wrapper.appendChild(slide);
+                    });
+                </script>
+                
+                <div id="dots"></div>
+
+                <script>
+                    const dotsContainer = document.getElementById("dots");
+
+                    speakersData.forEach((_, i) => {
+                        const dot = document.createElement("span");
+                        dot.className = "material-symbols-outlined page_controllers";
+                        dot.innerHTML = "radio_button_unchecked";
+                        dot.onclick = () => showSlide(i);
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    var speakers = document.querySelectorAll(".slide");
+                    var pageControllers = document.querySelectorAll(".page_controllers");
+                </script>
+
+                <!--
                         <div class="slide flex" id="slide{{i}}">
                             <div class="bioContainer flexbox" style="float: left">
                                 <div>
@@ -156,7 +226,7 @@
                                 </div>
                             </div>
                         </div>
-                    {% else %}
+                    
                         <div class="slide" id="slide{{i}}">
                             <div class="imgContainer flexbox" style="float: left">
                                 <div class="team-m no-select">
@@ -178,11 +248,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+                        </div> 
 
-                <!-- Slide Buttons -->
+                
                 <div class="buttons">
                     <div class="flexbox" style="cursor: pointer;">
                         <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);;" onclick="prevSlide(); delay()">arrow_back</div>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -191,7 +259,7 @@
                         {% endfor %}
                         <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);" onclick="nextSlide(); delay()">arrow_forward</div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Slide Script -->
                  <script>
@@ -285,23 +353,48 @@
         <div class="page-ctn flexbox flex-col align-center justify-center"> 
             <h2 class="m-1 g text-left">FAQ</h2>
             <div class="faq-item">
-                <button class="faq-question">What is the conference schedule?</button>
+                <button class="faq-question">What topics will be covered at the ALTA Conference?</button>
                 <div class="faq-answer">
-                    <p>The full schedule will be posted on the Program page. Sessions run Friday–Sunday.</p>
+                    <p>The conference will cover a variety of topics related to African language pedagogy, 
+                        including African language research and publication, classroom practices and curriculum design, 
+                        digital learning opportunities and challenges, community engagement, language and culture preservation, 
+                        study sbroad and the global classroom, and specific languages: Amharic, Akan/Twi, Swahili, isiZulu, 
+                        isiXhosa, isiNdebele, Siswati, Yoruba, Wolof, and Somali, and others.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Where is the conference located?</button>
+                <button class="faq-question">Can I attend the ALTA Conference if I’m not presenting?</button>
                 <div class="faq-answer">
-                    <p>The conference will take place at Princeton University.</p>
+                    <p>Absolutely! Presenting is not required to participate in the ALTA Conference. Attendees are welcome 
+                        to join the sessions, workshops, and discussions to learn, connect, and gain insights into the 
+                        latest trends in language instruction. Whether you're presenting or simply attending, there is 
+                        plenty to explore and take away from this experience.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Do I need to register?</button>
+                <button class="faq-question">Do I need to attend all days of the ALTA Conference?</button>
                 <div class="faq-answer">
-                    <p>Yes. Registration details are available on the Registration page.</p>
+                    <p>No, attending all days is not required. You’re welcome to participate in as much or as little of 
+                        the conference as suits your schedule. Each day offers unique sessions and networking opportunities, 
+                        so whether you join for one day or all, you’ll find valuable insights and connections.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How do I register for the ALTA conference?</button>
+                <div class="faq-answer">
+                    <p>Registration details are available on the Registration page.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How can I stay updated on conference announcements and schedules?</button>
+                <div class="faq-answer">
+                    <p>We recommend subscribing to our newsletter and following us on social media to receive the latest 
+                        updates on the conference, including schedules, speaker announcements, and session details. 
+                        Important information will also be posted on our conference website.</p>
                 </div>
             </div>
         </div>
