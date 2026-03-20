@@ -115,14 +115,16 @@
 
     <!-- ABOUT US PAGE -->
     <section class="page" id="about">
-
-        <div class="page-ctn align-center justify-center">
-            <div id="textBox">
-                <h2 style="width: 65vw; text-align: center;">The conference on teaching and learning African languages<br/></h2>
-                <div class="p2" style="width: 65vw; text-align: center;">The ALTA Annual Conference is where the leaders and stakeholders
+        <div class="flexbox page-ctn align-center justify-center">
+            <div id="textBox" style="margin-right: 2vw;">
+                <h2 style="text-align: center;">The conference on teaching and learning African languages<br/></h2>
+                <div class="p2" style="text-align: center;">The ALTA Annual Conference is where the leaders and stakeholders
                     of African languages come together to explore groundbreaking approaches in language pedagogy, cultural integration, and community engagement.</div>
-                <div class="p1" style="width: 65vw; text-align: center;">Conference Theme: <b><i>African Languages Across Disciplines, Professions, and Communities</i></b></div>
-                
+                <div class="p1 text-tile" style="text-align: center; border-radius: 25px;">Conference Theme: <b><i>African Languages Across Disciplines, Professions, and Communities</i></b></div>
+            </div>
+            <div class="imgContainer flexbox flex-col">
+                <img id="conferenceImage" src="static/assets/conference-img.jpg">
+                <img id="conferenceImage" src="static/assets/conference-img-2.jpg" style="margin-left: 5vw; margin-top: 3vh">
             </div>
         </div>
     </section>
@@ -135,13 +137,6 @@
                 organization: "Executive Secretary, East African Kiswahili Commission",
                 bio: "Dr. Asiimwe Caroline is the Executive Secretary of the East African Kiswahili Commission (EAKC), the East African Community institution tasked with coordinating and promoting Kiswahili across the region. She holds a PhD and Master’s in Kiswahili from the University of Dar es Salaam and a Bachelor’s degree from Makerere University. Dr. Asiimwe has extensive experience in advancing Kiswahili at national, regional, Pan-African, and global levels, forging strategic partnerships with governments, academic institutions, and development partners. Her work emphasizes language development, intercultural communication, and the role of Kiswahili in regional integration and multilingual societies. Previously, she lectured in the department of African Languages at Makerere University. She has researched and published on language policy, multilingualism, cultural linguistics, computational linguistics and Kiswahili teaching materials among others. An experienced editor, translator, and interpreter, Dr. Asiimwe bridges scholarship and practice, strengthening Kiswahili’s contribution to education, governance, and regional cooperation.",
                 img: "static/assets/caroline-asiimwe.png",
-                link: "https://example.com"
-            },
-            {
-                name: "John M. Mugane",
-                organization: "Professor of the Practice of African Languages and Culture and Director of the African Language Program, Harvard University",
-                bio: "John M. Mugane is Professor of the Practice of African Languages and Cultures at Harvard University, where he teaches and develops programs in African linguistics and language pedagogy. A specialist in Bantu linguistics, language contact, and African language policy, his scholarship examines the historical, structural, and sociopolitical dimensions of African languages in both continental and global contexts. His work engages questions of decolonization, epistemic sovereignty, and the institutional futures of African language programs. <br>Professor Mugane is also the founder of Thiomi-Lugha NLP, an initiative focused on machine translation and AI-driven solutions for low-resource African languages. His current research explores the intersection of African language pedagogy, machine learning, and multilingual communication, with particular attention to how emerging technologies are reshaping language learning, labor structures, and institutional infrastructure. <br>A committed advocate for sustainable and collaborative models of African language teaching, Professor Mugane’s work bridges scholarship, pedagogy, and technological innovation, positioning African languages as central to the reconfiguration of global academic and intellectual life.",
-                img: "static/assets/john-mugane.jpg",
                 link: "https://example.com"
             },
             {
@@ -170,18 +165,33 @@
                         slide.className = "slide flex";
                         slide.id = `slide${i}`;
 
-                        slide.innerHTML = `
-                            <div class="bioContainer flexbox">
-                                <div>
-                                    <h2>${speaker.name}</h2>
-                                    <h3>${speaker.organization}</h3>
-                                    <p style="padding: 10px;";>${speaker.bio}</p>
+                        if (isEven) {
+                            slide.innerHTML = `
+                                <div class="bioContainer flexbox">
+                                    <div>
+                                        <h2>${speaker.name}</h2>
+                                        <h3>${speaker.organization}</h3>
+                                        <p style="padding: 10px; font-size: calc(1vh + 0.5vw); font-weight: 300;">${speaker.bio}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="imgContainer flexbox">
-                                <img class="speaker-img" src="${speaker.img}">
-                            </div>
-                        `;
+                                <div class="imgContainer flexbox">
+                                    <img class="speaker-img" src="${speaker.img}">
+                                </div>
+                            `;
+                        } else {
+                            slide.innerHTML = `
+                                <div class="imgContainer flexbox">
+                                    <img class="speaker-img" src="${speaker.img}">
+                                </div>
+                                <div class="bioContainer flexbox">
+                                    <div>
+                                        <h2>${speaker.name}</h2>
+                                        <h3>${speaker.organization}</h3>
+                                        <p style="padding: 10px; font-size: calc(1vh + 0.5vw); font-weight: 300;">${speaker.bio}</p>
+                                    </div>
+                                </div>
+                            `;
+                        }
 
                         wrapper.appendChild(slide);
                     });
@@ -203,63 +213,6 @@
                     var speakers = document.querySelectorAll(".slide");
                     var pageControllers = document.querySelectorAll(".page_controllers");
                 </script>
-
-                <!--
-                        <div class="slide flex" id="slide{{i}}">
-                            <div class="bioContainer flexbox" style="float: left">
-                                <div>
-                                    <div class="team-m no-select">
-                                    <img class="speaker-img-mobile " src="{{url_for('static', filename=speakers.active[i].img)}}">
-                                </div>
-                                    <h2>{{speakers.active[i].name}}</h2>
-                                    <h3>{{speakers.active[i].organization}}</h3>
-                                    <div class="h2" style="padding-left: 10px;">
-                                        <p >{{speakers.active[i].bio}}</p>
-                                        <a class="no-link-decor text-tile text-tile-hover" target="_blank" href="{{speakers.active[i].link}}">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="imgContainer flexbox" style="float: right">
-                                <div class="team-m no-select">
-                                    <img class="speaker-img" src="{{url_for('static', filename=speakers.active[i].img)}}">
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="slide" id="slide{{i}}">
-                            <div class="imgContainer flexbox" style="float: left">
-                                <div class="team-m no-select">
-                                    <img class="speaker-img" src="{{url_for('static', filename=speakers.active[i].img)}}">
-                                </div>
-                            </div>
-
-                            <div class="bioContainer flexbox flex-col" style="float: right;">
-                                   
-                                    <div class="team-m no-select">
-                                    <img class="speaker-img-mobile " src="{{url_for('static', filename=speakers.active[i].img)}}">
-                                </div>
-                                <div>
-                                    <h2>{{speakers.active[i].name}}</h2>
-                                    <h3>{{speakers.active[i].organization}}</h3>
-                                    <div class="h2" style="padding-left: 10px;">
-                                        <p>{{speakers.active[i].bio}}</p>
-                                        <a class="no-link-decor text-tile text-tile-hover" target="_blank" href="{{speakers.active[i].link}}">Learn More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-
-                
-                <div class="buttons">
-                    <div class="flexbox" style="cursor: pointer;">
-                        <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);;" onclick="prevSlide(); delay()">arrow_back</div>&nbsp;&nbsp;&nbsp;&nbsp;
-                        {% for i in range(length_active_speakers) %}
-                            <div class="material-symbols-outlined page_controllers" style="font-size: calc(1vh + 0.5vw);" onclick="showSlide({{i}}); delay()">radio_button_unchecked</div>&nbsp;&nbsp;&nbsp;&nbsp;
-                        {% endfor %}
-                        <div class="material-symbols-outlined" style="font-size: calc(1vh + 0.5vw);" onclick="nextSlide(); delay()">arrow_forward</div>
-                    </div>
-                </div> -->
 
                 <!-- Slide Script -->
                  <script>
@@ -327,13 +280,16 @@
     <!-- HOTEL PAGE -->
     <section class="page" id="hotel">
         <div class="page-ctn flexbox flex-col align-center justify-center"> 
-            <h2 class="m-1 g text-left">Discounted Accommodation: Nassau Inn and Erdman Center</h2>
-            <p class="p2 text-center" style="margin-bottom:3rem;">The organizing committee has secured a discounted rate for ALTA 2026 attendees at Nassau Inn 10 Palmer Square Princeton and Erdman Center 64 Mercer Street Princeton. Situated in the heart of Princeton, the hotels are within walking distance of Princeton University making it an ideal choice for conference attendees.<br>
-                To take advantage of the special ALTA 2026 rate, contact the hotel directly and reference the African Language Teacher's Association.<br>
-                1. 58 rooms available at Nassau Inn $171 price/night.<br>
-                2. Few rooms available at Erdman Center $90 price/night.<br>
-
-                We encourage you to reserve your room early, as availability is limited. Don’t miss out on this exclusive offer—book your stay early!
+            <h2 class="m-1 g" style="text-align: center;">Discounted Accommodation: <br>Nassau Inn and Erdman Center</h2>
+            <p>The organizing committee has secured a discounted rate for ALTA 2026 attendees at Nassau Inn, 10 Palmer Square, and Erdman Center, 64 Mercer Street. Situated in the heart of Princeton, both hotels are within walking distance of Princeton University, making them an ideal choice for conference attendees.<br><br>
+                To take advantage of the special ALTA 2026 rate, please contact the hotel directly and reference the African Language Teacher's Association.
+            </p>
+            <p class="text-center text-tile" style="margin-bottom:3rem; font-size: calc(.9vw + 13px)">
+                58 rooms available at <b>Nassau Inn</b> for <b>$171/night</b>.<br>
+                22 Rooms available at <b>Erdman Center</b> for <b>$90/night</b>.<br>
+            </p>
+            <p style="width: 100%;">
+                We encourage you to reserve your room early, as availability is limited.
             </p>
         </div>
     </section>

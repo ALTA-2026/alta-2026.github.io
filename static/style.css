@@ -128,10 +128,12 @@ h3 {
 .text-left{text-align:left;}
 .text-right{text-align:right;}
 
-/* .text-tile{
-    box-shadow: 1px 1px 2px #875681; padding: 5px; border-radius: 8px;
-    background: white;
-} */
+.text-tile{
+    box-shadow: 1px 1px 2px #1aa44b;
+    padding: 10px; 
+    border-radius: 8px;
+    background: #6ad955;
+} 
 
 /* .text-tile-hover:hover{
     box-shadow: 3px 3px 5px #875681; padding: 5px; border-radius: 8px;
@@ -492,9 +494,10 @@ nav {
 
 /* -------- ABOUT US ------------- */
 #conferenceImage {
-    width: 40vw;
+    width: 25vw;
     z-index: 1;
     margin-bottom: 2vh;
+    border-radius: 20px;
 }
 
 .gradient-shadow-1 {
@@ -509,11 +512,11 @@ nav {
 
 #textBox {
     height: 75vh;
-    width: 80vw;
+    width: 100%;
     /* margin-top: 10vh;
     padding-left: 1vw;
-    padding-right: 1vw; */
-    padding-bottom: 15vh;
+    padding-right: 1vw; 
+    padding-bottom: 15vh; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
