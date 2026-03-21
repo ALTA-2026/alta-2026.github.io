@@ -703,6 +703,15 @@ nav {
     display: block;
 }
 
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link:hover {
+    color: #dfff4e;
+}
+
 /* ----------- TEAM --------- */
 
 .profile-img{
