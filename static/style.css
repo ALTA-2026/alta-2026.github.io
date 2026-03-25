@@ -129,10 +129,10 @@ h3 {
 .text-right{text-align:right;}
 
 .text-tile{
-    box-shadow: 1px 1px 2px #1aa44b;
+    box-shadow: 1px 1px 2px #33a75b;
     padding: 10px; 
     border-radius: 8px;
-    background: #6ad955;
+    background: #79bd5d;
 } 
 
 /* .text-tile-hover:hover{
@@ -160,7 +160,7 @@ h3 {
     position: fixed; /* Stays fixed even when scrolling */
     top: 0;
     left: 0;
-    background-color: #ace578; 
+    background-color: #abc871;
     z-index: -1; 
 }
 
@@ -680,23 +680,25 @@ nav {
 }
 
 .faq-question {
+    font-family: "Albert Sans", sans-serif;
     width: 100%;
     text-align: left;
     padding: 1rem;
     font-size: 1rem;
-    background: #6ad955;
+    background: #65c653;
     border: none;
     cursor: pointer;
 }
 
 .faq-question:hover {
-    background: #dfff4e;
+    background: #dedd57;
 }
 
 .faq-answer {
+    font-family: "Albert Sans", sans-serif;
     display: none;
     padding: 1rem;
-    background: #82e36f;
+    background: #8ecb63;
 }
 
 .faq-answer.active {
