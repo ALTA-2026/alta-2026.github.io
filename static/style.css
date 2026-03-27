@@ -720,7 +720,7 @@ nav {
     aspect-ratio: 1/1;
     width:calc(10vh + 8vw);
     object-fit:cover;
-    border-radius:15px;
+    border-radius:50%;
 }
 
 
